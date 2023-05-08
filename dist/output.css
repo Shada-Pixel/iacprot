@@ -677,6 +677,10 @@ video {
   flex-direction: column-reverse;
 }
 
+.flex-wrap{
+  flex-wrap: wrap;
+}
+
 .items-start{
   align-items: flex-start;
 }
@@ -1172,6 +1176,10 @@ video {
 
   .sm\:h-full{
     height: 100%;
+  }
+
+  .sm\:h-screen{
+    height: 100vh;
   }
 
   .sm\:min-h-screen{
