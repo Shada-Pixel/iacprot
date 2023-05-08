@@ -31,9 +31,9 @@
     ></script>
   </head>
 
-  <body class="">
+  <body class="relative">
     <!-- Header -->
-    <header class="px-10 drop-shadow-sm">
+    <header class="header px-10 drop-shadow-sm fixed top-0 w-full bg-transparent z-[9999]">
       <nav class="">
         <!-- Primary Navigation Menu -->
         <div class="flex justify-between h-16">
@@ -42,19 +42,17 @@
             <div class="shrink-0 flex items-center">
               <a href="">
                 <p
-                  class="font-ibm font-bold t sm:text-3xl uppercase"
+                  class="font-ibm font-bold t sm:text-3xl "
                 >
-                  Ishtiuq
+                  Ishtiuq.
                 </p>
               </a>
             </div>
           </div>
 
           <!-- Hamburger -->
-          <div class="-mr-2 flex items-center">
-            <button
-              @click="open = ! open"
-              class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 dark:text-gray-500 hover:text-gray-500 dark:hover:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-900 focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-900 focus:text-gray-500 dark:focus:text-gray-400 transition duration-150 ease-in-out"
+          <div class="-mr-2 flex items-center popmenutoggle burger">
+            <button class=" inline-flex items-center justify-center p-2 rounded-md text-gray-400 dark:text-gray-500 hover:text-gray-500 dark:hover:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-900 focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-900 focus:text-gray-500 dark:focus:text-gray-400 transition duration-150 ease-in-out"
             >
               <svg
                 class="h-6 w-6"
@@ -70,31 +68,55 @@
                   stroke-width="2"
                   d="M4 6h16M4 12h16M4 18h16"
                 />
-                <path
-                  :class="{'hidden': ! open, 'inline-flex': open }"
-                  class="hidden"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M6 18L18 6M6 6l12 12"
-                />
               </svg>
             </button>
           </div>
         </div>
       </nav>
       <!-- navbar -->
+
+      <!-- menu -->
+      <div class=" bg-transparent fixed top-0 right-0 popmenu hidden">
+        <div class="flex justify-end pt-4 pr-8">
+          <button class=" inline-flex items-center justify-center p-2 rounded-md text-gray-400 dark:text-gray-500 hover:text-gray-500 dark:hover:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-900 focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-900 focus:text-gray-500 dark:focus:text-gray-400 transition duration-150 ease-in-out popmenutoggle cross"
+            >
+            <svg class="h-6 w-6"
+            stroke="currentColor"
+            fill="none"
+            viewBox="0 0 24 24" >
+              <path
+                class="inline-flex"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <div class="">
+          <ul class="px-4 text-right">
+            <li class="mb-5"><a href="#hero" class="uppercase text-xl font-bold relative after:content-[''] after:h-[2px] after:w-0 after:absolute after:bg-black after:left-0 after:bottom-0 hover:after:w-full after:transition-all">Home</a></li>
+            <li class="mb-5"><a href="#resume" class="uppercase text-xl font-bold relative after:content-[''] after:h-[2px] after:w-0 after:absolute after:bg-black after:left-0 after:bottom-0 hover:after:w-full after:transition-all">Resume</a></li>
+            <li class="mb-5"><a href="#projects" class="uppercase text-xl font-bold relative after:content-[''] after:h-[2px] after:w-0 after:absolute after:bg-black after:left-0 after:bottom-0 hover:after:w-full after:transition-all">Projects</a></li>
+            <li class="mb-5"><a href="#contact" class="uppercase text-xl font-bold relative after:content-[''] after:h-[2px] after:w-0 after:absolute after:bg-black after:left-0 after:bottom-0 hover:after:w-full after:transition-all">Contact Me</a></li>
+            <li class="mb-5"><a href="#testimonial" class="uppercase text-xl font-bold relative after:content-[''] after:h-[2px] after:w-0 after:absolute after:bg-black after:left-0 after:bottom-0 hover:after:w-full after:transition-all">Testimonial</a></li>
+            
+          </ul>
+        </div>
+      </div>
     </header>
     <!-- Header end -->
 
     <!-- Main -->
     <main>
       <!-- Hero  -->
-      <section class="flex sm:h-[640px] sm:flex-row flex-col-reverse">
+      <section id="hero" class="flex sm:h-[640px] sm:flex-row flex-col-reverse">
         <div
-          class="w-full sm:w-1/2 flex flex-col justify-center items-start pl-10"
+          class="w-full sm:w-1/2 flex flex-col justify-center items-start px-10 pt-10 sm:pt-0"
         >
-          <h1 class="text-5xl font-bold uppercase font-ibm">
+          <h1 class="text-3xl sm:text-5xl font-bold uppercase font-ibm">
             Creative<br />UX/UI designer
           </h1>
           <h2 class="font-ibm font-bold mt-8">Ishtiuq Ahmed</h2>
@@ -103,7 +125,7 @@
             Seasons morning appear void creeping there moved there.
           </p>
           <button
-            class="font-ibm mt-8 px-10 py-4 bg-black text-white font-semibold text-xs uppercase tracking-widest transition ease-in-out duration-150 relative after:content-['Contact Me'] after:text-black after:w-full after:h-full after:z-10 after:top-0 after:left-0 after:bg-red-600"
+            class="contact-poptoggle font-ibm mt-8 px-10 py-4 bg-black text-white font-semibold text-xs uppercase tracking-widest transition ease-in-out duration-150 relative after:content-['Contact Me'] after:text-black after:w-full after:h-full after:z-10 after:top-0 after:left-0 after:bg-red-600"
           >
             Contact Me
           </button>
@@ -122,19 +144,19 @@
       <!-- Hero end  -->
 
       <!-- Resume -->
-      <div class="max-w-7xl mx-auto py-32">
+      <div id="resume" class="max-w-7xl mx-auto py-10 sm:py-32 px-10 sm:px-0">
         <div class="">
-          <h2 class="font-bold text-3xl font-ibm">
+          <h2 class="font-bold text-xl sm:text-3xl font-ibm">
             I have transform your ideas<br />
             into remarkable digital<br />
             products
           </h2>
         </div>
-        <div class="flex">
-          <div class="w-1/2 pr-10">
+        <div class="flex flex-col sm:flex-row">
+          <div class="sm:w-1/2 sm:pr-10">
             <img src="../dist/images/spsq.jpg" alt="" class="mt-10" />
           </div>
-          <div class="w-1/2 pt-10">
+          <div class="sm:w-1/2 pt-10">
             <p>
               Fifth had Grass called rule light. Can’t under can’t. Cattle
               waters signs, dry creepeth winged all lights can’t, under to
@@ -156,8 +178,8 @@
 
             <!-- Count up -->
             <div class="bg-black text-white mt-10 flex py-10">
-                <div class="w-1/2 flex justify-center items-center"><div class="counter font-ibm text-4xl font-bold mr-4" data-count="150">0</div><span class="font-light uppercase">Happy Customer</span></div>
-                <div class="w-1/2 flex justify-center items-center"><div class="counter font-ibm text-4xl font-bold mr-4" data-count="150">0</div><span class="font-light uppercase">Projects</span></div>
+                <div class="w-1/2 flex flex-col sm:flex-row  justify-center items-center"><div class="counter font-ibm text-2xl sm:text-4xl font-bold mr-4" data-count="15">0</div><span class="font-light uppercase">Happy Customer</span></div>
+                <div class="w-1/2 flex flex-col sm:flex-row  justify-center items-center"><div class="counter font-ibm text-2xl sm:text-4xl font-bold mr-4" data-count="30">0</div><span class="font-light uppercase">Projects</span></div>
             </div>
           </div>
         </div>
@@ -165,7 +187,7 @@
       <!-- Resume end -->
 
       <!-- Project carousel -->
-      <div class="owl-carousel project-carousel owl-theme ">
+      <div id="projects" class="owl-carousel project-carousel owl-theme ">
         <!-- item -->
         <div
           class="item sm:w-[500px] sm:h-[500px] bg-gray-500 bg-[url('../dist/images/spsq.jpg')] bg-cover bg-center bg-no-repeat relative group"
@@ -248,9 +270,9 @@
 
 
       <!-- Testimonial -->
-      <div class="py-20 bg-black mt-10">
+      <div id="testimonial" class="py-20 bg-black/80 mt-10">
         <div class="flex justify-center items-center">
-            <h2 class="text-black bg-white/50 inline-block px-4 font-space">Testimonial</h2>
+            <h2 class="text-black bg-white/80 inline-block px-4 font-space">Testimonial</h2>
         </div>
         <div class="max-w-xl mx-auto mt-10">
             <div class="owl-carousel testimonial-carousel owl-theme px-4">
@@ -311,7 +333,7 @@
 
 
       <!-- Experties -->
-      <div class="py-20 bg-black/10">
+      <div class="py-8 sm:py-20 bg-black/10">
         <div class="max-w-7xl mx-auto grid grid-cols-3">
             <div class="p-10 flex justify-center items-center grayscale"><img src="../dist/images/client-1-lg.png" alt="" srcset="" class="w-40 "></div>
             <div class="p-10 flex justify-center items-center grayscale"><img src="../dist/images/client-1-lg.png" alt="" srcset="" class="w-40 "></div>
@@ -327,35 +349,84 @@
 
 
       <!-- Work Together -->
-      <div class="py-20">
+      <div id="contact" class="py-20">
         <div class="max-w-7xl mx-auto text-center">
-            <h2 class="font-bold text-3xl text-black font-ibm">Let’s work together</h2>
-            <p class="mt-10 font-space">Fifth isn't don't gathering green you'll third bring bring bearing over for morning lights lights them dry sixth creepeth replenish.</p>
+            <h2 class="font-bold text-xl sm:text-3xl text-black font-ibm">Let’s work together</h2>
+            <p class="px-10 sm:px-0 mt-10 font-space">Fifth isn't don't gathering green you'll third bring bring bearing over for morning lights lights them dry sixth creepeth replenish.</p>
             <button
-            class="font-ibm mt-8 px-10 py-4 bg-black text-white font-semibold text-xs uppercase tracking-widest transition ease-in-out duration-150 relative after:content-['Contact Me'] after:text-black after:w-full after:h-full after:z-10 after:top-0 after:left-0 after:bg-red-600"
+            class="contact-poptoggle font-ibm mt-8 px-10 py-4 bg-black text-white font-semibold text-xs uppercase tracking-widest transition ease-in-out duration-150 relative after:content-['Contact Me'] after:text-black after:w-full after:h-full after:z-10 after:top-0 after:left-0 after:bg-red-600"
           >
             Contact Me
           </button>
         </div>
+
+        <!-- contact pop -->
+        <div class="w-full h-screen bg-white fixed top-0 left-0 z-[9999] contac hidden">
+          <div class="flex justify-end pt-4 pr-8">
+            <button class="contact-poptoggle inline-flex items-center justify-center p-2 rounded-md text-gray-400 dark:text-gray-500 hover:text-gray-500 dark:hover:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-900 focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-900 focus:text-gray-500 dark:focus:text-gray-400 transition duration-150 ease-in-out"
+              >
+              <svg class="h-6 w-6"
+              stroke="currentColor"
+              fill="none"
+              viewBox="0 0 24 24" >
+                <path
+                  class="inline-flex"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
+          <div class="max-w-7xl mx-auto sm:py-20  px-10 flex flex-col sm:flex-row">
+            <div class="w-full sm:w-1/2">
+              <div class="flex justify-start items-center">
+                  <h2 class="text-white bg-black/80 inline-block px-4 font-space">Don’t be shy</h2>
+              </div>
+              <h2 class="text-3xl sm:text-5xl font-bold uppercase font-ibm mt-4">Get in touch</h2>
+              <p class="font-space mt-4 sm:mt-8">Above creature the rule blessed brought. Multiply they're one.<br> Dry moveth gathering own waters beast blessed doesn't one evening called.</p>
+              <p class="mt-4 sm:mt-8 font-bold font-ibm">Address</p>
+              <p>10111 Santa Monica Boulevard, LA</p>
+              <p class="mt-4 sm:mt-8 font-bold font-ibm">Phone</p>
+              <p>+44 987 065 908</p>
+              <p class="mt-4 sm:mt-8 font-bold font-ibm">E-Mail</p>
+              <p>info@example.com</p>
+              <button class="block sm:hidden font-ibm mt-8 px-10 py-4 bg-black text-white font-semibold text-xs uppercase tracking-widest transition ease-in-out duration-150 relative after:content-['Contact Me'] after:text-black after:w-full after:h-full after:z-10 after:top-0 after:left-0 after:bg-red-600">Send Email</button>
+              <div class="flex justify-center sm:justify-start space-x-2 text-black text-2xl mt-8">
+                  <a href=""><span class="iconify" data-icon="circum:facebook"></span></a>
+                  <a href=""><span class="iconify" data-icon="circum:twitter"></span></a>
+                  <a href=""><span class="iconify" data-icon="circum:instagram"></span></a>
+                  <a href=""><span class="iconify" data-icon="circum:linkedin"></span></a>
+              </div>
+            </div>
+
+            <div class="w-full sm:w-1/2 hidden sm:block">
+              <img src="../dist/images/sprq.jpg" alt="" class="mt-10 w-100" />
+              <button class="font-ibm mt-8 px-10 py-4 bg-black text-white font-semibold text-xs uppercase tracking-widest transition ease-in-out duration-150 relative after:content-['Contact Me'] after:text-black after:w-full after:h-full after:z-10 after:top-0 after:left-0 after:bg-red-600">Send Email</button>
+            </div>
+          </div>
+        </div>
+        <!-- contact pop end -->
       </div>
       <!-- Work Together end-->
     </main>
     <!-- Main end -->
 
     <!-- Footer -->
-    <footer class="bg-black py-20 ">
-        <div class="max-w-7xl mx-auto grid grid-cols-4 space-x-10">
-            <div class="">
-                <p class="font-ibm font-bold  sm:text-3xl uppercase text-white" >Ishtiuq</p>
+    <footer class="bg-black py-10 sm:py-20 ">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-4 space-x-10">
+            <div class="text-center">
+                <p class="font-ibm font-bold  sm:text-3xl text-white" >Ishtiuq.</p>
             </div>
-            <div class="">
+            <div class="text-center mt-8 sm:mt-0">
                 <p class="font-space  text-white" >Creeping they’re she’d. Air fruit fourth moving saw sixth after dominion male him them fruitful.</p>
             </div>
-            <div class="">
+            <div class="text-center mt-8 sm:mt-0">
                 <p class="font-space  text-white" >+880 1674 66 85 44</p>
                 <p class="font-space  text-white" >ahmedishtiuq@gmail.com</p>
             </div>
-            <div class="flex justify-end space-x-2 text-white text-2xl">
+            <div class="flex justify-center sm:justify-end space-x-2 text-white text-2xl mt-8 sm:mt-0">
                 <a href=""><span class="iconify" data-icon="circum:facebook"></span></a>
                 <a href=""><span class="iconify" data-icon="circum:twitter"></span></a>
                 <a href=""><span class="iconify" data-icon="circum:instagram"></span></a>
