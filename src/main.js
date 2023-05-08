@@ -9,8 +9,6 @@ $(document).ready(function () {
             $('.header').addClass('bg-transparent');
             $('.header').removeClass('bg-white/80');
         }
-
-        console.log($(this).scrollTop());
     });
 
 
