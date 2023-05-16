@@ -613,8 +613,16 @@ video {
   display: none;
 }
 
+.aspect-video{
+  aspect-ratio: 16 / 9;
+}
+
 .h-16{
   height: 4rem;
+}
+
+.h-20{
+  height: 5rem;
 }
 
 .h-6{
@@ -633,16 +641,8 @@ video {
   height: 100vh;
 }
 
-.h-20{
-  height: 5rem;
-}
-
 .w-1\/2{
   width: 50%;
-}
-
-.w-40{
-  width: 10rem;
 }
 
 .w-6{
@@ -651,10 +651,6 @@ video {
 
 .w-full{
   width: 100%;
-}
-
-.w-20{
-  width: 5rem;
 }
 
 .max-w-7xl{
@@ -675,10 +671,6 @@ video {
 
 .grid-cols-1{
   grid-template-columns: repeat(1, minmax(0, 1fr));
-}
-
-.grid-cols-3{
-  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .grid-cols-4{
@@ -719,6 +711,10 @@ video {
 
 .justify-between{
   justify-content: space-between;
+}
+
+.gap-5{
+  gap: 1.25rem;
 }
 
 .space-x-10 > :not([hidden]) ~ :not([hidden]){
@@ -764,11 +760,6 @@ video {
   background-color: rgb(0 0 0 / 0.8);
 }
 
-.bg-gray-500{
-  --tw-bg-opacity: 1;
-  background-color: rgb(107 114 128 / var(--tw-bg-opacity));
-}
-
 .bg-transparent{
   background-color: transparent;
 }
@@ -782,20 +773,37 @@ video {
   background-color: rgb(255 255 255 / 0.8);
 }
 
-.bg-\[url\(\'\.\.\/dist\/images\/personal-image\.jpg\'\)\]{
-  background-image: url('../dist/images/personal-image.jpg');
-}
-
-.bg-\[url\(\'\.\.\/dist\/images\/spsq\.jpg\'\)\]{
-  background-image: url('../dist/images/spsq.jpg');
+.bg-gray-500{
+  --tw-bg-opacity: 1;
+  background-color: rgb(107 114 128 / var(--tw-bg-opacity));
 }
 
 .bg-\[url\(\'\.\.\/dist\/images\/Ishituq-for-portfolio\.jpg\'\)\]{
   background-image: url('../dist/images/Ishituq-for-portfolio.jpg');
 }
 
+.bg-\[url\(\'\.\.\/dist\/images\/smartintro\.jpg\'\)\]{
+  background-image: url('../dist/images/smartintro.jpg');
+}
+
+.bg-\[url\(\'\.\.\/dist\/images\/spsq\.jpg\'\)\]{
+  background-image: url('../dist/images/spsq.jpg');
+}
+
+.bg-\[url\(\'\.\.\/dist\/images\/lancoptt\.jpg\'\)\]{
+  background-image: url('../dist/images/lancoptt.jpg');
+}
+
+.bg-\[url\(\'\.\.\/dist\/images\/shadapixel\.jpg\'\)\]{
+  background-image: url('../dist/images/shadapixel.jpg');
+}
+
 .bg-cover{
   background-size: cover;
+}
+
+.bg-contain{
+  background-size: contain;
 }
 
 .bg-center{
@@ -966,10 +974,6 @@ video {
 
 .opacity-0{
   opacity: 0;
-}
-
-.opacity-40{
-  opacity: 0.4;
 }
 
 .drop-shadow-sm{
@@ -1176,10 +1180,6 @@ video {
 
 .hover\:no-underline:hover{
   text-decoration-line: none;
-}
-
-.hover\:opacity-100:hover{
-  opacity: 1;
 }
 
 .hover\:grayscale-0:hover{
